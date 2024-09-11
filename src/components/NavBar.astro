@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets";
+import chessLogo from "../images/chess-logo.svg";
+import telegramLogo from "../images/telegram.svg";
+import instagramLogo from "../images/instagram.svg";
+import youtubeLogo from "../images/youtube.svg";
+---
+
+<nav class="bg-black fixed w-full z-20 top-0 start-0">
+  <div
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+  >
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <Image src={chessLogo} alt="logo" />
+    </a>
+    <div
+      class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-3"
+    >
+      <a href="https://t.me/shokomarta" target="_blank">
+        <Image
+          src={telegramLogo}
+          alt="link to our telegram account"
+          width={20}
+          height={16}
+        />
+      </a>
+      <a
+        href="https://www.instagram.com/chessmarta_shop?igsh=MTF0eDMzeG5nMTc0cg%3D%3D&utm_source=qr"
+        target="_blank"
+      >
+        <Image
+          src={instagramLogo}
+          alt="link to our instagram account"
+          width={19}
+          height={19}
+        />
+      </a>
+      <a href="https://www.youtube.com/@Chess_Marta" target="_blank">
+        <Image
+          src={youtubeLogo}
+          alt="link to our youtube account"
+          width={23}
+          height={18}
+        />
+      </a>
+    </div>
+    <div
+      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+      id="navbar-sticky"
+    >
+      <ul
+        class="flex gap-10 flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 bg-black"
+      >
+        <li>
+          <a
+            class="features-link block py-2 px-3 rounded md:bg-transparent md:p-0 hover:text-white"
+            aria-current="page"
+            >Преимущества<a> </a>
+            <li>
+              <a
+                class="tariff-link block py-2 px-3 rounded md:bg-transparent md:p-0 hover:text-white"
+                >Тарифы</a
+              >
+            </li>
+            <li>
+              <a
+                class="about-link block py-2 px-3 rounded md:bg-transparent md:p-0 hover:text-white"
+                >Обо мне</a
+              >
+            </li>
+            <li>
+              <a
+                class="faq-link block py-2 px-3 rounded md:bg-transparent md:p-0 hover:text-white"
+                >Частые вопросы</a
+              >
+            </li>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <style>
+      a {
+        color: #6a6a6a;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+      const features = document.getElementById("features");
+      const featuresLink = document.querySelector(".features-link");
+      featuresLink?.addEventListener("click", () => {
+        features?.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      });
+
+      const tariff = document.getElementById("tariff");
+      const tariffLink = document.querySelector(".tariff-link");
+      tariffLink?.addEventListener("click", () => {
+        tariff?.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      });
+
+      const about = document.getElementById("about");
+      const aboutLink = document.querySelector(".about-link");
+      aboutLink?.addEventListener("click", () => {
+        about?.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      });
+      const faq = document.getElementById("faq");
+      const faqlink = document.querySelector(".faq-link");
+      faqlink?.addEventListener("click", () => {
+        faq?.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      });
+    </script>
+  </div>
+</nav>
