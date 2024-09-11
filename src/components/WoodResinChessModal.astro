@@ -1,0 +1,319 @@
+---
+import CarouselWood from "./CarouselWood.astro";
+import chessImage from "../images/chess1.png";
+---
+
+<div
+  id="modalWoodChess"
+  class="relative z-10 hidden"
+  role="dialog"
+  aria-modal="true"
+>
+  <div
+    id="modalWoodBackdrop"
+    class="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity"
+  >
+  </div>
+
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+    <div
+      class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4"
+    >
+      <div
+        class="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 container"
+      >
+        <div
+          class="relative flex w-full items-center overflow-hidden bg-black pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8 mt-[72px]"
+        >
+          <button
+            id="closeWoodChessModalBtn"
+            type="button"
+            class="absolute right-4 top-4 text-orange-500 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
+          >
+            <span class="sr-only">Close</span>
+            <svg
+              class="h-10 w-10"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+
+          <div class="grid w-full items-start gap-x-6 gap-y-8 lg:gap-x-8">
+            <div class="sm:col-span-8 lg:col-span-7">
+              <section class="py-2 bg-black dark:bg-gray-900 antialiased">
+                <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+                  <div
+                    class="wrapper lg:grid lg:grid-cols-2 lg:gap-1.5 xl:gap-4"
+                  >
+                    <CarouselWood />
+
+                    <div class="mt-6 sm:mt-8 lg:mt-0">
+                      <h2
+                        class="text-xl font-semibold text-white sm:text-2xl dark:text-white mb-1"
+                      >
+                        Шахматы с деревом и смолой
+                      </h2>
+                      <p
+                        class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400"
+                      >
+                        *Курс по цене одних шахмат
+                      </p>
+
+                      <div class="block p-6 bg-[#212121] gift-container mt-5">
+                        <h5
+                          class="mb-2 text-2xl font-semibold tracking-tight text-orange-600 uppercase"
+                        >
+                          Получи в подарок
+                        </h5>
+
+                        <ul
+                          role="list"
+                          class="space-y-4 text-gray-500 dark:text-gray-400"
+                        >
+                          <li
+                            class="flex space-x-2 rtl:space-x-reverse items-center"
+                          >
+                            <svg
+                              class="flex-shrink-0 w-5 h-6 text-blue-600 dark:text-blue-500"
+                              viewBox="0 0 32 32"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M20.0005 30.3337H12.0005C4.76051 30.3337 1.66718 27.2403 1.66718 20.0003V12.0003C1.66718 4.76033 4.76051 1.66699 12.0005 1.66699H20.0005C27.2405 1.66699 30.3338 4.76033 30.3338 12.0003V20.0003C30.3338 27.2403 27.2405 30.3337 20.0005 30.3337ZM12.0005 3.66699C5.85384 3.66699 3.66718 5.85366 3.66718 12.0003V20.0003C3.66718 26.147 5.85384 28.3337 12.0005 28.3337H20.0005C26.1472 28.3337 28.3338 26.147 28.3338 20.0003V12.0003C28.3338 5.85366 26.1472 3.66699 20.0005 3.66699H12.0005Z"
+                                fill="#F6F6F6"></path>
+                              <path
+                                d="M28.6394 10.4795H3.35938C2.81271 10.4795 2.35938 10.0262 2.35938 9.47949C2.35938 8.93283 2.79938 8.47949 3.35938 8.47949H28.6394C29.186 8.47949 29.6394 8.93283 29.6394 9.47949C29.6394 10.0262 29.1994 10.4795 28.6394 10.4795Z"
+                                fill="#F6F6F6"></path>
+                              <path
+                                d="M11.3594 10.2935C10.8127 10.2935 10.3594 9.84014 10.3594 9.29348V2.81348C10.3594 2.26681 10.8127 1.81348 11.3594 1.81348C11.906 1.81348 12.3594 2.26681 12.3594 2.81348V9.29348C12.3594 9.84014 11.906 10.2935 11.3594 10.2935Z"
+                                fill="#F6F6F6"></path>
+                              <path
+                                d="M20.6406 9.69348C20.094 9.69348 19.6406 9.24014 19.6406 8.69348V2.81348C19.6406 2.26681 20.094 1.81348 20.6406 1.81348C21.1873 1.81348 21.6406 2.26681 21.6406 2.81348V8.69348C21.6406 9.25348 21.2006 9.69348 20.6406 9.69348Z"
+                                fill="#F6F6F6"></path>
+                              <path
+                                d="M14.7867 24.1597C14.3067 24.1597 13.8533 24.0397 13.44 23.813C12.5333 23.2797 12 22.213 12 20.8664V17.6664C12 16.3197 12.5333 15.2397 13.4533 14.7064C14.3733 14.173 15.5733 14.253 16.7333 14.933L19.5067 16.533C20.6667 17.1997 21.3467 18.1997 21.3467 19.2664C21.3467 20.333 20.6667 21.333 19.4933 21.9997L16.72 23.5997C16.08 23.973 15.4133 24.1597 14.7867 24.1597ZM14.8 16.3597C14.6667 16.3597 14.5467 16.3864 14.4533 16.4397C14.1733 16.5997 14 17.053 14 17.6664V20.8664C14 21.4664 14.1733 21.9197 14.4533 22.093C14.7333 22.253 15.2133 22.173 15.7333 21.8664L18.5067 20.2664C19.0267 19.9597 19.3467 19.5864 19.3467 19.2664C19.3467 18.9464 19.04 18.573 18.5067 18.2664L15.7333 16.6664C15.3867 16.4664 15.0533 16.3597 14.8 16.3597Z"
+                                fill="#F6F6F6"></path>
+                            </svg>
+
+                            <span class="leading-tight text-white"
+                              >Уроки по съемке видео на миллион просмотров
+                            </span>
+                          </li>
+                          <li
+                            class="flex space-x-2 rtl:space-x-reverse items-center"
+                          >
+                            <svg
+                              class="flex-shrink-0 w-5 h-6 text-blue-600 dark:text-blue-500"
+                              viewBox="0 0 32 32"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.67042 29.1595C5.68375 29.1595 4.71042 28.7862 3.96375 28.0395C3.24375 27.3195 2.84375 26.3595 2.84375 25.3328C2.84375 24.3062 3.24375 23.3462 3.96375 22.6262L21.2971 5.29285C22.7904 3.79952 25.2171 3.79952 26.7104 5.29285C27.4304 6.01285 27.8304 6.97285 27.8304 7.99952C27.8304 9.02618 27.4304 9.98618 26.7104 10.7062L9.37708 28.0395C8.63042 28.7862 7.65708 29.1595 6.67042 29.1595ZM24.0037 6.17285C23.5371 6.17285 23.0704 6.34618 22.7104 6.70619L5.37708 24.0395C5.03042 24.3862 4.84375 24.8395 4.84375 25.3328C4.84375 25.8262 5.03042 26.2795 5.37708 26.6262C6.08375 27.3328 7.25708 27.3328 7.96375 26.6262L25.2971 9.29285C25.6437 8.94618 25.8304 8.49285 25.8304 7.99952C25.8304 7.50618 25.6437 7.05285 25.2971 6.70619C24.9371 6.34618 24.4704 6.17285 24.0037 6.17285Z"
+                                fill="#F6F6F6"></path>
+                              <path
+                                d="M24.0164 12.9869C23.763 12.9869 23.5097 12.8936 23.3097 12.6936L19.3097 8.69357C18.923 8.3069 18.923 7.6669 19.3097 7.28023C19.6964 6.89357 20.3364 6.89357 20.723 7.28023L24.723 11.2802C25.1097 11.6669 25.1097 12.3069 24.723 12.6936C24.523 12.8936 24.2697 12.9869 24.0164 12.9869Z"
+                                fill="#F6F6F6"></path>
+                              <path
+                                d="M13.3373 7.33308C13.2706 7.33308 13.2173 7.31974 13.1506 7.30641L11.3373 6.77308L9.52397 7.30641C9.28397 7.37308 9.03064 7.30641 8.87064 7.13308C8.69731 6.95974 8.63064 6.71974 8.69731 6.47974L9.23064 4.66641L8.69731 2.85308C8.63064 2.61308 8.69731 2.35974 8.87064 2.19974C9.04397 2.02641 9.29731 1.95974 9.52397 2.02641L11.3373 2.55974L13.1506 2.02641C13.3906 1.95974 13.6306 2.02641 13.804 2.19974C13.9773 2.37308 14.044 2.62641 13.9773 2.85308L13.444 4.66641L13.9773 6.47974C14.044 6.71974 13.9773 6.97308 13.804 7.13308C13.684 7.26641 13.5106 7.33308 13.3373 7.33308ZM11.3373 5.41308C11.404 5.41308 11.4573 5.42641 11.524 5.43974L12.3506 5.67974L12.1106 4.85308C12.0706 4.73308 12.0706 4.59974 12.1106 4.47974L12.3506 3.65308L11.524 3.89308C11.404 3.93308 11.2706 3.93308 11.1506 3.89308L10.324 3.65308L10.564 4.47974C10.604 4.59974 10.604 4.73308 10.564 4.85308L10.324 5.67974L11.1506 5.43974C11.2173 5.42641 11.2706 5.41308 11.3373 5.41308Z"
+                                fill="#F6F6F6"></path>
+                              <path
+                                d="M8.00137 15.3331C7.9347 15.3331 7.88137 15.3197 7.8147 15.3064L6.00137 14.7731L4.18804 15.3064C3.94804 15.3731 3.70804 15.3064 3.5347 15.1331C3.36137 14.9597 3.2947 14.7064 3.36137 14.4797L3.8947 12.6664L3.36137 10.8531C3.2947 10.6131 3.36137 10.3597 3.5347 10.1997C3.70804 10.0397 3.96137 9.95974 4.18804 10.0264L6.00137 10.5597L7.8147 10.0264C8.04137 9.95974 8.2947 10.0264 8.46804 10.1997C8.64137 10.3731 8.70804 10.6264 8.64137 10.8531L8.10804 12.6664L8.64137 14.4797C8.70804 14.7197 8.64137 14.9731 8.46804 15.1331C8.34804 15.2664 8.1747 15.3331 8.00137 15.3331ZM6.00137 13.4131C6.06804 13.4131 6.12137 13.4264 6.18804 13.4397L7.0147 13.6797L6.7747 12.8531C6.7347 12.7331 6.7347 12.5997 6.7747 12.4797L7.0147 11.6531L6.18804 11.8931C6.06804 11.9331 5.9347 11.9331 5.8147 11.8931L4.98804 11.6531L5.22804 12.4797C5.26804 12.5997 5.26804 12.7331 5.22804 12.8531L4.98804 13.6797L5.8147 13.4397C5.88137 13.4264 5.9347 13.4131 6.00137 13.4131Z"
+                                fill="#F6F6F6"></path>
+                              <path
+                                d="M28.0014 22.0001C27.9347 22.0001 27.8814 21.9867 27.8147 21.9734L26.0014 21.4401L24.188 21.9734C23.948 22.0401 23.708 21.9734 23.5347 21.8001C23.3614 21.6267 23.2947 21.3734 23.3614 21.1467L23.8947 19.3334L23.3614 17.5201C23.2947 17.2801 23.3614 17.0267 23.5347 16.8667C23.708 16.7067 23.9614 16.6267 24.188 16.6934L26.0014 17.2267L27.8147 16.6934C28.0414 16.6267 28.2947 16.6934 28.468 16.8667C28.6414 17.0401 28.708 17.2934 28.6414 17.5201L28.108 19.3334L28.6414 21.1467C28.708 21.3867 28.6414 21.6401 28.468 21.8001C28.348 21.9334 28.1747 22.0001 28.0014 22.0001ZM26.0014 20.0801C26.068 20.0801 26.1214 20.0934 26.188 20.1067L27.0147 20.3467L26.7747 19.5201C26.7347 19.4001 26.7347 19.2667 26.7747 19.1467L27.0147 18.3201L26.188 18.5601C26.068 18.6001 25.9347 18.6001 25.8147 18.5601L24.988 18.3201L25.228 19.1467C25.268 19.2667 25.268 19.4001 25.228 19.5201L24.988 20.3467L25.8147 20.1067C25.8814 20.0934 25.9347 20.0801 26.0014 20.0801Z"
+                                fill="#F6F6F6"></path>
+                            </svg>
+
+                            <span class="leading-tight text-white"
+                              >Научитесь делать качественно и продавать дорого</span
+                            >
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
+                        <p class="text-2xl text-white sm:text-3xl font-medium">
+                          66 000₽
+                        </p>
+                        <p class="text-[20px] text-white font-medium">
+                          / Возможна рассрочка
+                        </p>
+                      </div>
+
+                      <p class="mb-6 text-gray-500 dark:text-gray-400 mt-4">
+                        На программе вы узнаете:
+                      </p>
+                      <div class="mt-4 mb-4">
+                        <ul
+                          role="list"
+                          class="options list-disc space-y-2 pl-4 text-base font-medium lg:grid lg:grid-cols-2 items-baseline gap-10"
+                        >
+                          <div>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Что нужно купить на старте</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white">Где брать дерево</span>
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Как и чем его обрабатывать</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Подготовка, Грунтовка дерева все этапы</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Подходящее дерево для шахмат (нет трещин, легко
+                                шлифуется)</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Как шлифовать и полировать шахматы</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Какую полероль использовать</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Чем и как покрывать для защиты</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Как идеально заливать без пузырей</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Как делать короб для заливки и многое другое</span
+                              >
+                            </li>
+                          </div>
+                          <div>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Как заливать фигуры без пузырей</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Силиконовые формы, молды</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Средства защиты и аксессуары</span
+                              >
+                            </li>
+
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Ссылки на все расходники</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Свойства смолы и как она себя ведет</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Как правильно измерять смолу</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Особые условия для эпоксидной смолы</span
+                              >
+                            </li>
+                            <li class="text-white">
+                              <span class="text-white"
+                                >Какую смолу для чего использовать и так далее</span
+                              >
+                            </li>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const openModalBtns = document.querySelectorAll(".openWoodChessModalBtn");
+    const closeModalBtn = document.getElementById("closeWoodChessModalBtn");
+    const modal = document.getElementById("modalWoodChess");
+    const modalBackdrop = document.getElementById("modalWoodBackdrop");
+
+    // Function to open the modal
+    function openModal() {
+      modal?.classList.remove("hidden");
+      modalBackdrop?.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      modal?.classList.add("hidden");
+      modalBackdrop?.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Event listener for opening the modal
+
+    openModalBtns.forEach((openModalBtn) => {
+      openModalBtn?.addEventListener("click", openModal);
+    });
+
+    // Event listener for closing the modal
+    closeModalBtn?.addEventListener("click", closeModal);
+    modalBackdrop?.addEventListener("click", closeModal);
+  });
+</script>
+
+<style>
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 71rem;
+    }
+  }
+
+  .gift-container {
+    max-width: 37rem;
+    background-image: url("/src/images/gift.png");
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+
+  .wrapper {
+    grid-template-columns: 40% 59%;
+  }
+</style>
