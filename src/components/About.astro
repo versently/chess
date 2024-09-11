@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import aboutImage from "../images/about.png";
+
+import telegramLogo from "../images/telegram.svg";
+import instagramLogo from "../images/instagram.svg";
+import youtubeLogo from "../images/youtube.svg";
+---
+
+<section id="about" class="py-8 bg-black md:py-16 dark:bg-gray-900 antialiased">
+  <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+      <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
+        <Image class="w-full" src={aboutImage} alt="фото основателя курсов" />
+      </div>
+
+      <div class="mt-6 sm:mt-8 lg:mt-0">
+        <h4
+          class="uppercase mb-5 text-xl font-semibold text-white sm:text-2xl dark:text-white"
+        >
+          Обо мне
+        </h4>
+
+        <p class="mb-6 text-white">
+          Я профессиональный игрок и тренер по шахматам с большой аудиторией
+          в соцсетях. И для любого, кто работает головой, важно иметь физическое
+          хобби. Так я и нашла себя в мире дерева и эпоксидки. Начала делать
+          шахматы для себя, а затем и для всего мира. Мои шахматы покупают
+          крупные компании, блогеры и влиятельные люди
+        </p>
+
+        <p class="text-white">
+          Решила поделится всеми секретами и знаниями с вами, чтобы мы вместе
+          популизировали эту великую игру королей!
+        </p>
+        <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8 flex gap-10">
+          <a href="https://t.me/shokomarta" target="_blank">
+            <Image
+              src={telegramLogo}
+              alt="link to our telegram account"
+              width={37}
+              height={30}
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/chessmarta_shop?igsh=MTF0eDMzeG5nMTc0cg%3D%3D&utm_source=qr"
+            target="_blank"
+          >
+            <Image
+              src={instagramLogo}
+              alt="link to our instagram account"
+              width={35}
+              height={35}
+            />
+          </a>
+          <a href="https://www.youtube.com/@Chess_Marta" target="_blank">
+            <Image
+              src={youtubeLogo}
+              alt="link to our youtube account"
+              width={42}
+              height={34}
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

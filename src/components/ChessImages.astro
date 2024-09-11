@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+
+import chessPreviewImg1 from "../images/preview/preview1.webp";
+import chessPreviewImg2 from "../images/preview/preview2.webp";
+import chessPreviewImg3 from "../images/preview/preview3.webp";
+---
+
+<div class="bg-[#121212] bg-[url('/src/images/grid.png')] lg:p-5 p-6">
+  <div
+    id="animation-carousel"
+    class="relative w-full z-0"
+    data-carousel="static"
+  >
+    <!-- Carousel wrapper -->
+    <div
+      class="wrapper relative h-80 overflow-hidden lg:h-[720px] lg:w-[860px] md:w-[550px] md:h-[480px]"
+    >
+      <!-- Item 1 -->
+      <div class="hidden duration-400 ease-linear" data-carousel-item>
+        <Image
+          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          src={chessPreviewImg1}
+          alt="фото шахмат"
+        />
+      </div>
+      <!-- Item 2 -->
+      <div class="hidden duration-400 ease-linear" data-carousel-item>
+        <Image
+          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          src={chessPreviewImg2}
+          alt="фото шахмат"
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-400 ease-linear" data-carousel-item="active">
+        <Image
+          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          src={chessPreviewImg3}
+          alt="фото шахмат"
+        />
+      </div>
+    </div>
+    <!-- Slider controls -->
+    <button
+      type="button"
+      class="absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none"
+      data-carousel-prev
+    >
+      <span>
+        <svg
+          class="w-8 h-8 lg:w-24 lg:h-24 text-orange-600 rtl:rotate-180 opacity-65"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 1 1 5l4 4"></path>
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button
+      type="button"
+      class="absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none"
+      data-carousel-next
+    >
+      <span>
+        <svg
+          class="w-8 h-8 lg:w-24 lg:h-24 text-orange-600 rtl:rotate-180 opacity-65"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 9 4-4-4-4"></path>
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    margin: 0 auto;
+  }
+</style>
