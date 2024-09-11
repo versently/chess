@@ -1,0 +1,42 @@
+---
+import "@fontsource-variable/montserrat";
+
+import NavBar from "../components/NavBar.astro";
+import OrderModalForm from "../components/OrderModalForm.astro";
+import EpoxyResinChessModal from "../components/EpoxyResinChessModal.astro";
+import WoodResinChessModal from "../components/WoodResinChessModal.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content="Шахматы" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"
+    ></script>
+
+    <NavBar />
+    <slot />
+    <OrderModalForm />
+    <EpoxyResinChessModal />
+    <WoodResinChessModal />
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: "Montserrat Variable", sans-serif;
+    background-color: #121212;
+    color: white;
+  }
+</style>
