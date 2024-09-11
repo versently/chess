@@ -1,0 +1,167 @@
+<div id="modal" class="relative z-10 hidden" role="dialog" aria-modal="true">
+  <div
+    id="modalBackdrop"
+    class="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity"
+  >
+  </div>
+
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+    <div
+      class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4"
+    >
+      <div
+        class="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl"
+      >
+        <div
+          class="relative flex w-full items-center overflow-hidden bg-[#212121] px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8 mt-[72px]"
+        >
+          <button
+            id="closeModalBtn"
+            type="button"
+            class="absolute right-4 top-4 text-orange-500 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
+          >
+            <span class="sr-only">Close</span>
+            <svg
+              class="h-10 w-10"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+
+          <div class="grid w-full items-start gap-x-6 gap-y-8 lg:gap-x-8">
+            <div class="sm:col-span-8 lg:col-span-7">
+              <form>
+                <h2
+                  class="text-3xl tracking-tight text-white text-center sm:text-4xl mb-2 mt-2 uppercase"
+                >
+                  Заполните Форму
+                </h2>
+                <p class="mb-8 text-white text-center">
+                  Мы свяжемся с вами, чтобы уточнить детали и отправить
+                  документы для оплаты
+                </p>
+                <div class="mb-6">
+                  <label
+                    for="first_name"
+                    class="block mb-2 text-sm font-medium text-white"
+                    >Ваше имя</label
+                  >
+                  <input
+                    type="text"
+                    id="first_name"
+                    class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5"
+                    required
+                  />
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-500 text-white"
+                    >Электронная почта</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5"
+                    required
+                  />
+                </div>
+
+                <div class="mb-6">
+                  <label
+                    for="phone"
+                    class="block mb-2 text-sm font-medium text-gray-500 text-white"
+                    >Номер телефона</label
+                  >
+                  <input
+                    required
+                    type="tel"
+                    id="phone"
+                    class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="message"
+                    class="block mb-2 text-sm font-medium text-gray-500 text-white"
+                    >Комментарий</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    class="bg-black block p-2.5 w-full text-sm text-white rounded-sm border border-gray-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  ></textarea>
+                </div>
+
+                <!--     <div class="flex items-start mb-6">
+                  <div class="flex items-center h-5">
+                    <input
+                      id="remember"
+                      type="checkbox"
+                      class="w-4 h-4 border text-orange-500 border-orange-300 rounded bg-orange-50 focus:ring-3 focus:ring-orange-300"
+                      required
+                    />
+                  </div>
+                  <label
+                    for="remember"
+                    class="ms-2 text-sm font-medium text-white"
+                    >Нажимая Отправить, вы соглашаетесь с <a
+                      href="#"
+                      class="text-white underline"
+                      >политикой конфиденциальности</a
+                    >.</label
+                  >
+                </div> -->
+                <button
+                  type="submit"
+                  class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                  >Отправить</button
+                >
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const openModalBtns = document.querySelectorAll(".openModalBtn");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const modal = document.getElementById("modal");
+    const modalBackdrop = document.getElementById("modalBackdrop");
+
+    // Function to open the modal
+    function openModal() {
+      modal?.classList.remove("hidden");
+      modalBackdrop?.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      modal?.classList.add("hidden");
+      modalBackdrop?.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Event listener for opening the modal
+    openModalBtns.forEach((openModalBtn) => {
+      openModalBtn?.addEventListener("click", openModal);
+    });
+
+    // Event listener for closing the modal
+    closeModalBtn?.addEventListener("click", closeModal);
+    modalBackdrop?.addEventListener("click", closeModal);
+  });
+</script>
