@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import logoImage from "../images/chess-logo.svg";
+import telegramLogo from "../images/telegram.svg";
+import instagramLogo from "../images/instagram.svg";
+import youtubeLogo from "../images/youtube.svg";
+---
+
+<footer class="bg-black rounded-lg shadow dark:bg-gray-900 m-4">
+  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div
+      class="flex sm:flex sm:items-center sm:justify-between justify-between"
+    >
+      <a
+        href="/"
+        class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+      >
+        <Image src={logoImage} class="h-8" alt="Chess Logo" />
+      </a>
+      <ul
+        class="flex gap-2 flex-wrap items-center text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+      >
+        <li class="flex">
+          <a
+            href="https://t.me/shokomarta"
+            target="_blank"
+            class="hover:underline me-4 md:me-6"
+          >
+            <Image
+              src={telegramLogo}
+              alt="link to our telegram account"
+              width={34}
+              height={28}
+            />
+          </a>
+        </li>
+        <li class="flex">
+          <a
+            href="https://www.instagram.com/chessmarta_shop?igsh=MTF0eDMzeG5nMTc0cg%3D%3D&utm_source=qr"
+            target="_blank"
+            class="hover:underline me-4 md:me-6"
+          >
+            <Image
+              src={instagramLogo}
+              alt="link to our instagram account"
+              width={32}
+              height={32}
+            />
+          </a>
+        </li>
+        <li class="flex">
+          <a
+            href="https://www.youtube.com/@Chess_Marta"
+            target="_blank"
+            class="hover:underline me-4 md:me-6"
+          >
+            <Image
+              src={youtubeLogo}
+              alt="link to our youtube account"
+              width={39}
+              height={31}
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--  <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <ul
+      class="lg:flex flex-wrap items-center text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+    >
+      <li class="mb-5 lg:mb-0">
+        <a href="#" class="hover:underline me-4 md:me-6"
+          >Политика конфиденциальности
+        </a>
+      </li>
+      <li>
+        <a href="#" class="hover:underline me-4 md:me-6"
+          >Пользовательское соглашение
+        </a>
+      </li>
+    </ul> -->
+  </div>
+</footer>
