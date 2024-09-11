@@ -1,0 +1,175 @@
+---
+import { Image } from "astro:assets";
+import GiftButton from "./GiftButton.astro";
+import chess3Image from "../images/chess3.png";
+---
+
+<div id="tariff" class="mb-10">
+  <section class="py-8 md:py-16 bg-[#212121] antialiased">
+    <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+        <div class="container shrink-0 max-width mx-auto order-2">
+          <div class="gift">
+            <GiftButton id="openResinChessModalBtn" />
+          </div>
+          <Image
+            class="w-full h-full image"
+            src={chess3Image}
+            alt="фото шахмат из смолы"
+          />
+        </div>
+
+        <div class="mt-6 sm:mt-8 lg:mt-0">
+          <h2 class="text-xl font-semibold text-white sm:text-2xl uppercase">
+            Шахматы из эпоксидной смолы
+          </h2>
+          <h2 class="text-[14px] text-[#6A6A6A]">*Курс по цене одних шахмат</h2>
+          <div class="mt-4 sm:items-baseline sm:gap-4 sm:flex">
+            <div class="flex gap-2">
+              <div class="text-4xl price lg:text-5xl font-bold">9 990₽</div>
+              <div class="text-2xl old-price lg:text-2xl font-medium">
+                25 000₽
+              </div>
+            </div>
+            <p class="text-[20px] text-white font-medium">
+              / Возможна рассрочка
+            </p>
+          </div>
+          <p class="mt-4 underline">Акция действует только 2 дня</p>
+
+          <h3 class="text-sm font-medium text-[#6A6A6A] mt-10">
+            На программе вы узнаете:
+          </h3>
+          <div class="mt-2 mb-4">
+            <ul
+              role="list"
+              class="options list-disc space-y-2 pl-4 text-base font-medium"
+            >
+              <div>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Как заливать фигуры без пузырей
+                  </span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Силиконовые формы, молды</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Средства защиты </span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Акссесуары </span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Ссылки на все расходники </span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Какую смолу для чего использовать</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Свойтсво смолы и как она себя ведет</span
+                  >
+                </li>
+              </div>
+              <div>
+                <li class="text-white">
+                  <span class="text-white">Как правильно измерять смолу</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Как и чем замешать</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Секреты застывания и работы со смолой</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Какие красители, пигменты и пасты использовать и как</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Скидка на смолу и где брать</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Базовый набор инструментов</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Как работать с цветами, все детали</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Какие материалы нельзя добавлять в смолу</span
+                  >
+                </li>
+              </div>
+            </ul>
+          </div>
+
+          <div class="mt-6 sm:gap-4 sm:mt-8">
+            <button
+              type="button"
+              class="openResinChessModalBtn w-full font-semibold text-white uppercase bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 py-2.5 me-2 mb-2"
+              >Подробнее о Курсе</button
+            >
+
+            <button
+              type="button"
+              class="openModalBtn w-full font-semibold text-white uppercase bg-[#DE3906] hover:bg-orange-500 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 py-2.5 me-2 mb-2"
+              >Выбрать курс</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .container {
+    position: relative;
+    max-height: 560px;
+  }
+
+  .gift {
+    position: absolute;
+    right: -5px;
+    top: -34px;
+  }
+  @media (min-width: 1024px) {
+    .gift {
+      right: -20px;
+      top: -50px;
+    }
+  }
+  .image {
+    object-fit: cover;
+    object-position: center;
+  }
+  @media (min-width: 1024px) {
+    .max-width {
+      max-width: 38rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .options {
+      display: flex;
+      align-items: baseline;
+      gap: 42px;
+    }
+  }
+
+  .price {
+    color: #fd1717;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+  }
+</style>
