@@ -1,0 +1,246 @@
+---
+import { Image } from "astro:assets";
+import GiftButton from "./GiftButton.astro";
+import chess4Image from "../images/chess4.png";
+---
+
+<section class="py-8 md:py-16 bg-[#212121] antialiased">
+  <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+      <div class="container shrink-0 max-width mx-auto order-2">
+        <div class="gift">
+          <GiftButton id="openWoodChessModalBtn" />
+        </div>
+        <Image
+          class="w-full h-full image"
+          src={chess4Image}
+          alt="фото шахмат с деревом и смолой"
+        />
+      </div>
+
+      <div class="mt-6 sm:mt-8 lg:mt-0">
+        <h2 class="text-xl font-semibold text-white sm:text-2xl uppercase">
+          Шахматы с деревом и смолой
+        </h2>
+        <h2 class="text-[14px] text-[#6A6A6A]">*Курс по цене одних шахмат</h2>
+        <div class="mt-4 sm:items-baseline sm:gap-4 sm:flex">
+          <div class="flex gap-2">
+            <div class="text-4xl price lg:text-5xl font-bold">37 000₽</div>
+            <div class="text-2xl old-price lg:text-2xl font-medium">
+              54 000₽
+            </div>
+          </div>
+          <p class="text-[20px] text-white font-medium">/ Возможна рассрочка</p>
+        </div>
+        <p class="mt-4 underline">Акция действует только 2 дня</p>
+
+        <div class="options">
+          <div class="mt-10">
+            <h3 class="text-sm font-medium text-[#6A6A6A]">
+              На программе вы узнаете:
+            </h3>
+            <div class="mt-4">
+              <ul
+                role="list"
+                class="list-disc space-y-2 pl-4 text-base font-medium"
+              >
+                <li class="text-white">
+                  <span class="text-white">Что нужно купить на старте</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Где брать дерево</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Как и чем его обрабатывать</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Подготовка, Грунтовка дерева все этапы</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Подходящее дерево для шахмат (нет трещин, легко шлифуется)</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Как шлифовать и полировать шахматы</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Какую полероль использовать</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Чем и как покрывать для защиты</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Как идеально заливать без пузырей</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Как делать короб для заливки и многое другое</span
+                  >
+                </li>
+                <!--     <li class="text-white">
+                    <span class="text-white"
+                      >Как правильно и на что клеить кубики чтобы не было
+                      искривления и следов
+                    </span>
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white"
+                      >Как внедрять беспроводную подсветку</span
+                    >
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white">Как делать рамки, чем покрывать</span>
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white"
+                      >Все нюансы связанные с эпоксидной смолой</span
+                    >
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white">Как создать и подготовить кубики</span>
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white"
+                      >Виды дерева подходящие для заливки шахмат</span
+                    >
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white">Ссылки на все Расходники</span>
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white"
+                      >Средства для определения влажности и температуры помещения</span
+                    >
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white">Где брать кожу и как ее клеить</span>
+                  </li>
+                  <li class="text-white">
+                    <span class="text-white"
+                      >Какие молды подходят для фигур и где их брать</span
+                    >
+                  </li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <h3 class="text-sm font-medium text-[#6A6A6A]">
+              А так же про смолу:
+            </h3>
+            <div class="mt-4">
+              <ul
+                role="list"
+                class="list-disc space-y-2 pl-4 text-base font-medium"
+              >
+                <li class="text-white">
+                  <span class="text-white">Как заливать фигуры без пузырей</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Силиконовые формы, молды</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Средства защиты и аксессуары</span>
+                </li>
+
+                <li class="text-white">
+                  <span class="text-white">Ссылки на все расходники</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Свойства смолы и как она себя ведет</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white">Как правильно измерять смолу</span>
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Особые условия для эпоксидной смолы</span
+                  >
+                </li>
+                <li class="text-white">
+                  <span class="text-white"
+                    >Какую смолу для чего использовать и так далее</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 sm:gap-4 sm:mt-8">
+          <button
+            type="button"
+            class="openWoodChessModalBtn w-full font-semibold text-white uppercase bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 py-2.5 me-2 mb-2"
+            >Подробнее о Курсе</button
+          >
+
+          <button
+            type="button"
+            class="openModalBtn w-full font-semibold text-white uppercase bg-[#DE3906] hover:bg-orange-500 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 py-2.5 me-2 mb-2"
+            >Выбрать курс</button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    position: relative;
+  }
+
+  .gift {
+    position: absolute;
+    right: -5px;
+    top: -34px;
+  }
+
+  @media (min-width: 1024px) {
+    .gift {
+      top: -30px;
+    }
+  }
+  .image {
+    object-fit: cover;
+    object-position: center;
+    min-height: 390px;
+  }
+  @media (min-width: 1024px) {
+    .max-width {
+      max-width: 38rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .options {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gift {
+      right: -20px;
+      top: -50px;
+    }
+  }
+
+  .price {
+    color: #fd1717;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+  }
+</style>
