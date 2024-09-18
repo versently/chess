@@ -15,7 +15,7 @@
       class="flex flex-col mb-8 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
     >
       <button
-        class="openModalBtn inline-flex justify-center items-center py-4 px-20 text-lg font-medium uppercase text-center text-white bg-orange-600 hover:bg-orange-500"
+        class="select-course inline-flex justify-center items-center py-4 px-20 text-lg font-medium uppercase text-center text-white bg-orange-600 hover:bg-orange-500"
       >
         Выбрать курс
       </button>
@@ -31,3 +31,14 @@
     background-position: top;
   }
 </style>
+
+<script>
+  const tariff = document.getElementById("tariff");
+  const button = document.querySelector(".select-course");
+  button?.addEventListener("click", () => {
+    tariff?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
+  });
+</script>
