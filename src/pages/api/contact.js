@@ -28,5 +28,4 @@ export async function send({name, email, phone, message }) {
             }
         });
     });
-
 }
