@@ -1,12 +1,29 @@
 ---
 import { Image } from "astro:assets";
 import chessImage from "../images/chess5.png";
+import { send } from "../pages/api/contact";
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get("name");
+    const email = data.get("email");
+    const phone = data.get("phone");
+    const message = data.get("message");
+
+    send({ name, email, phone, message });
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error("Ошибка при отправке письма:", error.message);
+    }
+  }
+}
 ---
 
 <section class="py-8 bg-black md:py-16 dark:bg-gray-900 antialiased">
   <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
     <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-      <form>
+      <form id="contact-form" method="POST">
         <h2
           class="text-3xl tracking-tight text-white text-center sm:text-4xl mb-6 mt-4"
         >
@@ -23,19 +40,21 @@ import chessImage from "../images/chess5.png";
           <input
             type="text"
             id="first_name"
+            name="name"
             class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5"
             required
           />
         </div>
         <div class="mb-6">
           <label
-            for="email-question"
+            for="email"
             class="block mb-2 text-sm font-medium text-gray-500 text-white"
             >Электронная почта</label
           >
           <input
             type="email"
-            id="email-question"
+            id="email"
+            name="email"
             class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5"
             required
           />
@@ -43,45 +62,32 @@ import chessImage from "../images/chess5.png";
 
         <div class="mb-6">
           <label
-            for="phone-question"
+            for="phone"
             class="block mb-2 text-sm font-medium text-gray-500 text-white"
             >Номер телефона</label
           >
           <input
             type="tel"
-            id="phone-question"
+            id="phone"
+            name="phone"
             class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
         </div>
         <div class="mb-6">
           <label
-            for="message-question"
+            for="message"
             class="block mb-2 text-sm font-medium text-gray-500 text-white"
             >Сообщение</label
           >
           <textarea
-            id="message-question"
+            required
+            id="message"
+            name="message"
             rows="4"
             class="bg-black block p-2.5 w-full text-sm text-white rounded-sm border border-gray-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           ></textarea>
         </div>
 
-        <!--  <div class="flex items-start mb-6">
-          <div class="flex items-center h-5">
-            <input
-              id="remember-question"
-              type="checkbox"
-              class="w-4 h-4 border text-orange-500 border-orange-300 rounded bg-orange-50 focus:ring-3 focus:ring-orange-300"
-              required
-            />
-          </div>
-          <label for="remember-question" class="ms-2 text-sm font-medium text-white"
-            >Нажимая Отправить, вы соглашаетесь с <a
-              href="#"
-              class="text-white underline">политикой конфиденциальности</a
-            >.</label
-          >
-        </div> -->
         <button
           type="submit"
           class="text-white bg-orange-600 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium text-sm w-full sm:w-auto px-5 py-2.5 text-center"
@@ -95,3 +101,26 @@ import chessImage from "../images/chess5.png";
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("contact-form");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const eventTarget = event.target as HTMLFormElement;
+
+    const formData = new FormData(eventTarget);
+
+    try {
+      await fetch(eventTarget.action, {
+        method: "POST",
+        body: formData,
+      });
+
+      window.location.href = "/";
+    } catch (error) {
+      console.error("Ошибка при отправке формы:", error);
+    }
+  });
+</script>
