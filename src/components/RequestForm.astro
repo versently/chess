@@ -11,7 +11,7 @@ if (Astro.request.method === "POST") {
     const phone = data.get("phone");
     const message = data.get("message");
 
-    send({ name, email, phone, message });
+    await send({ name, email, phone, message });
   } catch (error) {
     if (error instanceof Error) {
       console.error("Ошибка при отправке письма:", error.message);
