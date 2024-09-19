@@ -11,6 +11,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function send({name, email, phone, message }) {
+    
     const mailOptions = {
         from: import.meta.env.VITE_EMAIL_ADDRESS,
         to: import.meta.env.VITE_EMAIL_ADDRESS,
@@ -19,13 +20,11 @@ export async function send({name, email, phone, message }) {
         text: `Текст сообщения: ${message}\nНомер для связи: ${phone}\nПочта для связи: ${email}`
     };
 
-     await new Promise((resolve, reject) => {
-        transporter.sendMail(mailOptions, (err, info) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(info);
-            }
-        });
-    });
+    try {
+        await transporter.sendMail(mailOptions);
+        return new Response('Сообщение отправлено', { status: 200 });
+    } catch (error) {
+        console.error(error);
+        return new Response('Ошибка отправки', { status: 500 });
+    }
 }
