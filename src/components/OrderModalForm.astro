@@ -38,7 +38,7 @@
 
           <div class="grid w-full items-start gap-x-6 gap-y-8 lg:gap-x-8">
             <div class="sm:col-span-8 lg:col-span-7">
-              <form>
+              <form method="POST" id="order-form">
                 <h2
                   class="text-3xl tracking-tight text-white text-center sm:text-4xl mb-2 mt-2 uppercase"
                 >
@@ -56,20 +56,22 @@
                   >
                   <input
                     type="text"
-                    id="first_name"
+                    id="name-order"
+                    name="name-order"
                     class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5"
                     required
                   />
                 </div>
                 <div class="mb-6">
                   <label
-                    for="email"
+                    for="email-order"
                     class="block mb-2 text-sm font-medium text-gray-500 text-white"
                     >Электронная почта</label
                   >
                   <input
                     type="email"
-                    id="email"
+                    id="email-order"
+                    name="email-order"
                     class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5"
                     required
                   />
@@ -84,7 +86,8 @@
                   <input
                     required
                     type="tel"
-                    id="phone"
+                    id="phone-order"
+                    name="phone-order"
                     class="bg-black border border-gray-500 text-white text-sm focus:ring-orange-500 rounded-sm focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
@@ -95,31 +98,13 @@
                     >Комментарий</label
                   >
                   <textarea
-                    id="message"
+                    required
+                    id="message-order"
                     rows="4"
+                    name="message-order"
                     class="bg-black block p-2.5 w-full text-sm text-white rounded-sm border border-gray-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   ></textarea>
                 </div>
-
-                <!--     <div class="flex items-start mb-6">
-                  <div class="flex items-center h-5">
-                    <input
-                      id="remember"
-                      type="checkbox"
-                      class="w-4 h-4 border text-orange-500 border-orange-300 rounded bg-orange-50 focus:ring-3 focus:ring-orange-300"
-                      required
-                    />
-                  </div>
-                  <label
-                    for="remember"
-                    class="ms-2 text-sm font-medium text-white"
-                    >Нажимая Отправить, вы соглашаетесь с <a
-                      href="#"
-                      class="text-white underline"
-                      >политикой конфиденциальности</a
-                    >.</label
-                  >
-                </div> -->
                 <button
                   type="submit"
                   class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium text-sm w-full sm:w-auto px-5 py-2.5 text-center"
@@ -163,5 +148,26 @@
     // Event listener for closing the modal
     closeModalBtn?.addEventListener("click", closeModal);
     modalBackdrop?.addEventListener("click", closeModal);
+  });
+</script>
+
+<script>
+  const form = document.getElementById("order-form");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    try {
+      await fetch("/api/feedback", {
+        method: "POST",
+        body: formData,
+      });
+
+      window.location.href = "/";
+    } catch (error) {
+      console.error("Ошибка при отправке формы:", error);
+    }
   });
 </script>
