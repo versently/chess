@@ -19,7 +19,7 @@ export async function send({name, email, phone, message }) {
         text: `Текст сообщения: ${message}\nНомер для связи: ${phone}\nПочта для связи: ${email}`
     };
 
-    return await new Promise((resolve, reject) => {
+     await new Promise((resolve, reject) => {
         transporter.sendMail(mailOptions, (err, info) => {
             if (err) {
                 reject(err);
@@ -28,4 +28,5 @@ export async function send({name, email, phone, message }) {
             }
         });
     });
+
 }
