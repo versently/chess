@@ -3,11 +3,10 @@ import { send } from "./send";
 export const POST = async ({ request }) => {
   try {
     const data = await request.formData();
-    const name = data.get("name-order");
-    const email = data.get("email-order");
-    const phone = data.get("phone-order");
-    const message = data.get("message-order");
-    
+    const name = data.get("name");
+    const email = data.get("email");
+    const phone = data.get("phone");
+    const message = data.get("message");
 
     await send({ name, email, phone, message });
 

@@ -1,23 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import chessImage from "../images/chess5.png";
-import { send } from "../pages/api/contact";
-
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const name = data.get("name");
-    const email = data.get("email");
-    const phone = data.get("phone");
-    const message = data.get("message");
-
-    await send({ name, email, phone, message });
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error("Ошибка при отправке письма:", error.message);
-    }
-  }
-}
 ---
 
 <section class="py-8 bg-black md:py-16 dark:bg-gray-900 antialiased">
@@ -108,12 +91,10 @@ if (Astro.request.method === "POST") {
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const eventTarget = event.target as HTMLFormElement;
-
-    const formData = new FormData(eventTarget);
+    const formData = new FormData(event.target as HTMLFormElement);
 
     try {
-      await fetch(eventTarget.action, {
+      await fetch("/api/question", {
         method: "POST",
         body: formData,
       });
