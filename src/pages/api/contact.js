@@ -19,11 +19,13 @@ export async function send({name, email, phone, message }) {
         text: `Текст сообщения: ${message}\nНомер для связи: ${phone}\nПочта для связи: ${email}`
     };
 
-    try {
-        await transporter.sendMail(mailOptions);
-        return new Response('Сообщение отправлено', { status: 200 });
-    } catch (error) {
-        console.error(error);
-        return new Response('Ошибка отправки', { status: 500 });
-    }
+    return await new Promise((resolve, reject) => {
+        transporter.sendMail(mailOptions, (err, info) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(info);
+            }
+        });
+    });
 }
