@@ -1,4 +1,4 @@
-import { send } from "./send";
+/* import { send } from "./send";
 
 export const POST = async ({ request }) => {
   try {
@@ -30,3 +30,4 @@ export const POST = async ({ request }) => {
     }
   }
 };
+ */

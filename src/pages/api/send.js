@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+/* import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
     host: import.meta.env.VITE_SMPT_HOST,
@@ -28,3 +28,4 @@ export async function send({name, email, phone, message }) {
         return new Response('Ошибка отправки', { status: 500 });
     }
 }
+ */
